@@ -8,7 +8,7 @@ RUN apt-get update \
   && apt-get purge -y \
   libzip-dev
 
-RUN apt-get install -y vim
+RUN apt-get install -y vim default-mysql-client
 
 RUN apt-get update && apt-get install -y \
   libfreetype6-dev \
