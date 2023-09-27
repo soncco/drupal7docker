@@ -14,7 +14,8 @@ RUN apt-get update && apt-get install -y \
   libfreetype6-dev \
   libjpeg62-turbo-dev \
   libpng-dev \
-  && docker-php-ext-configure gd \
+  libwebp-dev \
+  && docker-php-ext-configure gd --with-jpeg --with-webp --with-freetype \
   && docker-php-ext-install -j$(nproc) gd
 
 RUN docker-php-ext-install mysqli pdo pdo_mysql
