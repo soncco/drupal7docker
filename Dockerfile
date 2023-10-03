@@ -6,7 +6,8 @@ RUN apt-get update \
   && docker-php-ext-install -j$(nproc) \
   zip \
   && apt-get purge -y \
-  libzip-dev
+  libzip-dev \
+  libzip4
 
 RUN apt-get install -y vim default-mysql-client
 
