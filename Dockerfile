@@ -1,13 +1,13 @@
-FROM php:8-apache
+FROM php:8.2.9-apache
 
 RUN apt-get update \
   && apt-get install -y \
   libzip-dev \
+  zlib1g-dev \
   && docker-php-ext-install -j$(nproc) \
-  zip \
-  && apt-get purge -y \
-  libzip-dev \
-  libzip4
+  zip
+
+#RUN docker-php-ext-install zip
 
 RUN apt-get install -y vim default-mysql-client
 
